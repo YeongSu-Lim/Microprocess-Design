@@ -1,6 +1,7 @@
 # S32K144 MCU 기반 차량 전장 시스템 제어 시뮬레이션
 
-![Uploading 제목 없는 비디오 - Clipchamp로 제작.gif…]()
+![Uploading 클러스터 시스템 동작.gif…]()
+
 
 
 ## 1. 프로젝트 개요
