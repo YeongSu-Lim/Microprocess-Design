@@ -16,7 +16,7 @@
 | 서보 PWM | PTD11 · FTM2_CH1 | `FTM2_CH1_PWM()` |
 | 자리 선택 | PTB8~PTB13 | `PORT_init_Segment()` |
 | 세그먼트 a~g | PTD8, 9, 12, 5, 13, 14, 3 | `seven_segment.c` 출력 마스크 |
-| 방향·제동 표시 | PTE14~16 · PTA0~1 | `Led_blink()` |
+| 방향·제동 표시 | PTE14–PTE16 · PTA0–PTA1 | `Led_blink()` |
 | 연료 경고 모사 | PTD15 · active-low | `Fuel_Warning()` |
 
 근거: [motor.c](../motor.c), [turn.c](../turn.c), [seven_segment.c](../seven_segment.c), [handler.c](../handler.c), [regs_config.h](../regs_config.h). 조향과 LED의 좌우 주석이 일부 일치하지 않아 물리적 좌우는 배선 확인이 필요합니다.
