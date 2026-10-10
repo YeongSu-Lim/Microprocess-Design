@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include "handler.h"
 #include "regs_config.h"
-#include "Motor.h"
+#include "motor.h"
 #include "turn.h"
 #include "common.h"
 #include "state.h"
@@ -43,3 +43,4 @@ int main(void)
 
 	}
 }
+
