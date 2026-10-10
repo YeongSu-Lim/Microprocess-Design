@@ -1,4 +1,7 @@
-/* Host characterization only: no MMIO or board execution. */
+/* Existing-behavior / known-defect reproduction suite.
+ * Passing asserts reproduce current behavior; they do NOT prove correct operation.
+ * No MMIO or board execution; motor functions below are stubs.
+ */
 #include <assert.h>
 #include <stdio.h>
 #include "state.h"
@@ -15,7 +18,7 @@ void DRV_Coasting_Control(void) {}
 void Handle_Steering(void) {}
 void Led_blink(void) {}
 void Keep_Constant_Speed(void) { cruise_calls++; }
-int main(void) {
+static void characterize_existing_behavior_including_known_defects(void) {
  current_state=STATE_OFF; Start_Flag=1; Process_State_Transition();
  assert(current_state==STATE_OFF); /* Known defect, not desired behavior. */
  current_state=STATE_P; Gear_Flag=1; current_speed=0; Process_State_Transition();
@@ -28,5 +31,8 @@ int main(void) {
  assert(cruise_calls==1 && brake_calls==0); /* Known missing brake cancellation. */
  Start_Flag=0; Process_State_Transition(); assert(current_state==STATE_OFF);
  puts("6 characterization checks passed; known defects reproduced, NOT fixed");
+}
+int main(void) {
+ characterize_existing_behavior_including_known_defects();
  return 0;
 }
