@@ -1,4 +1,4 @@
-#include "Motor.h"
+#include "motor.h"
 
 volatile int max_speed = 200000;
 volatile int limited_speed = 0;
