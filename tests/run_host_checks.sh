@@ -1,5 +1,7 @@
 #!/bin/sh
 set -eu
+# Existing behavior and known-defect reproduction, NOT functional acceptance.
+printf '%s\n' 'SUITE: existing behavior / known-defect reproduction (not acceptance)'
 cd "$(dirname "$0")/.."
 work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT HUP INT TERM
